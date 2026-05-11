@@ -1,4 +1,4 @@
-#LifeGrid
+# LifeGrid
 
 A minimal visual web app that transforms your age into a living grid of time.
 
