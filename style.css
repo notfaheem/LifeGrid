@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000000;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero{
+    height: 100vh;
+    width: 100%;
+        flex-direction: column;
+        gap: 20px;
+}
+#dob{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: #000;;
+}
+#btn{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+.year-sec{
+    width: 50%;
+    flex-wrap: wrap;
+    transition: 1s;
+}
+.circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #0084ff;
+    margin:5px;
+    transition:1s;
+    animation: circle 0.3s ease forwards;
+    display: none;
+    font-size: 10px;
+}
+@keyframes circle {
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 20px;
+    }
+}
