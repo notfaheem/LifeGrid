@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LifeGrid</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="public/favicon.png">
 </head>
+
 <body>
-    <div class="hero flex">
+
+    <div class="hero">
+        <!-- 
+        <img class="cloud1" src="public/clouds.png"> -->
+
+        <div class="nav">
+            <img class="logo" src="public/favicon.png">
+            <div class="title">LifeGrid</div>
+            <div class=""></div>
+            <div class="page active">Home</div>
+            <div class="page">About</div>
+            <div class="page">Contact</div>
+        </div>
+
+
+        <h1 class="head" id="head1">Time, Made Visible.</h1>
+
+        <p>Transform your age into an interactive grid of years, months, weeks, and days.</p>
+
         <p class="">Enter your date of birth to see your life in weeks!</p>
         <form>
             <label for="dob">Date of Birth:</label>
@@ -17,11 +40,14 @@
         </form>
         <p id="text">Hola</p>
         <div class="year-sec flex" id="year-sec">
-            <div class="circle flex" id="circle"><p class="innertext"></p></div>
+            <div class="circle flex" id="circle">
+                <p class="innertext"></p>
+            </div>
         </div>
         <p id="noteOne"></p>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

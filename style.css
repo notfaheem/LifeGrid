@@ -1,32 +1,107 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: #fff;
 }
-body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #000000;
+
+body {
+    font-family: "Finger Paint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #000;
 }
-.flex{
+.flex {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.hero{
+
+.hero {
     height: 100vh;
     width: 100%;
-        flex-direction: column;
-        gap: 20px;
+    position: relative;
+    background-image: url(public/bg1.png);
+    background-size: cover;
+    background-position: center bottom -200px;
 }
-#dob{
+
+/* .cloud1{
+    width: 500px;
+    opacity: 0.05;
+    position: absolute;
+    filter: blur(10px);
+    top:300px;
+    left: 250px;
+    transform: rotate(30deg);
+    animation: cloud ease 10s infinite ;
+}
+@keyframes cloud{
+    0%{
+    top:300px;
+    left: 250px;
+    }
+    100%{
+    top:150px;
+    left: 10px;
+    }
+} */
+.nav {
+    width: 50%;
+    height: 10%;
+    background-color: hsla(0, 0%, 11%, 0.527);
+    backdrop-filter: blur(20px);
+    border: 1px solid #8f8f8f;
+    border-radius: 40px;
+    position: absolute;
+    top: 20px;
+    transform: translateX(-50%);
+    left: 50%;
+    box-shadow: black 0px 5px 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr 4fr 2fr 2fr 2fr;
+    place-items: center;
+    padding:10px 30px;
+}
+.logo {
+    width: 40px;
+}
+.title{
+    font-weight: 600;
+    font-size: 15px;
+}
+.page{
+    font-size: 13px;
+    padding:8px 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.active{
+    background-color: #080033;
+}
+.page:hover{
+    background-color: #080033;
+}
+.head{
+    position: absolute;
+    transform: translate(-50%);
+    top:25%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+}
+#dob {
     padding: 10px;
     border-radius: 5px;
     border: none;
     outline: none;
-    color: #000;;
+    color: #000;
+    ;
 }
-#btn{
+
+#btn {
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
@@ -35,27 +110,31 @@ body{
     color: #000;
     cursor: pointer;
 }
-.year-sec{
+
+.year-sec {
     width: 50%;
     flex-wrap: wrap;
     transition: 1s;
 }
-.circle{
+
+.circle {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background-color: #0084ff;
-    margin:5px;
-    transition:1s;
+    margin: 5px;
+    transition: 1s;
     animation: circle 0.3s ease forwards;
     display: none;
     font-size: 10px;
 }
+
 @keyframes circle {
-    0%{
+    0% {
         width: 0px;
     }
-    100%{
+
+    100% {
         width: 20px;
     }
 }
