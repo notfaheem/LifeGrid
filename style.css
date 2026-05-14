@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     color: #fff;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -16,40 +17,31 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+section{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 20px 50px;
+}
+.center{
+    transform: translate(-50%);
+    left: 50%;
+}
+.centerall{
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top:50%;
+}
 .hero {
     height: 100vh;
     width: 100%;
     position: relative;
-    background-image: url(public/bg1.png);
-    background-size: cover;
-    background-position: center bottom -200px;
+    overflow: hidden;
 }
-
-/* .cloud1{
-    width: 500px;
-    opacity: 0.05;
-    position: absolute;
-    filter: blur(10px);
-    top:300px;
-    left: 250px;
-    transform: rotate(30deg);
-    animation: cloud ease 10s infinite ;
-}
-@keyframes cloud{
-    0%{
-    top:300px;
-    left: 250px;
-    }
-    100%{
-    top:150px;
-    left: 10px;
-    }
-} */
 .nav {
     width: 50%;
     height: 10%;
-    background-color: hsla(0, 0%, 11%, 0.527);
+    background-color: hsla(0, 0%, 11%, 0.315);
     backdrop-filter: blur(20px);
     border: 1px solid #8f8f8f;
     border-radius: 40px;
@@ -62,6 +54,7 @@ body {
     grid-template-columns: 1fr 2fr 4fr 2fr 2fr 2fr;
     place-items: center;
     padding:10px 30px;
+    z-index: 10;
 }
 .logo {
     width: 40px;
@@ -78,39 +71,86 @@ body {
     cursor: pointer;
 }
 .active{
-    background-color: #080033;
+    background-color: #fff;
+    color: #000;
 }
 .page:hover{
-    background-color: #080033;
+    background-color: #fff;
+    color: #000;
+}
+.bg-video{
+    position: absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    z-index: 0;
+}
+.bg{
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #00000088;
 }
 .head{
     position: absolute;
-    transform: translate(-50%);
-    top:25%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    top:50%;
     left: 50%;
     width: 100%;
     text-align: center;
+}
+.head1{
     font-size: 60px;
+    margin:0;
+}
+.para1{
+    font-size: 13px;
+    margin: 0 0 40px 0;
+}
+.para2{
+    font-size: 18px;
+    margin:2px;
 }
 #dob {
     padding: 10px;
     border-radius: 5px;
     border: none;
     outline: none;
-    color: #000;
-    ;
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-family: "Finger Paint", sans-serif;
+    width: 20%;
+    font-size: 18px;
+    background-color: #00000000;
+    backdrop-filter: blur(10px);
+    border: 1px solid #8f8f8f;
 }
-
-#btn {
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    background-color: #fff;
-    color: #000;
+#dob::-webkit-calendar-picker-indicator{
+    filter: invert(1);
     cursor: pointer;
 }
-
+#btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: "Finger Paint", sans-serif;
+    cursor: pointer;
+    width: 15%;
+    background-color: #fff;
+    color: #000;
+    backdrop-filter: blur(10px);
+    border: 1px solid #8f8f8f;
+    transition: 0.3s;
+    margin:10px;
+}
+#btn:hover{
+    background-color: #00000000;
+    color:#fff;
+}
 .year-sec {
     width: 50%;
     flex-wrap: wrap;
