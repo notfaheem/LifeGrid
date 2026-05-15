@@ -42,7 +42,7 @@
             <form>
                 <input value="2009-02-11" required type="date" id="dob" placeholder="Date of Birth">
                 <a href="#y-sec">
-                    <button onclick="getdob()" type="button" id="btn">Let's Go</button>
+                    <button onclick="getdob()" type="button" id="btn" class="btn">Let's Go</button>
                 </a>
             </form>
 
@@ -55,15 +55,41 @@
 
     <section class="y-sec" id="y-sec">
 
+        <div class="bg"></div>
 
-            <p id="text">Hola</p>
+        <div class="y flex">
+            <p id="text" class="text">Hola</p>
             <div class="year-sec flex" id="year-sec">
                 <div class="circle flex" id="circle">
                     <p class="innertext"></p>
                 </div>
             </div>
             <p id="noteOne"></p>
+            <a href="#m-sec" class="no">
+                <button onclick="monthCircles()" class="btn flex btn_in_y" id="btn_in_y"><span>Continue the Story </span> <span class="rot">^</span></button>
+            </a>
+        </div>
 
+    </section>
+
+
+
+    <section class="y-sec m-sec" id="m-sec">
+
+        <div class="bg"></div>
+
+        <div class="y flex">
+            <p id="text-m" class="text text-m">Hola</p>
+            <div class="year-sec flex" id="month-sec">
+                <div class="circle flex" id="circle-m">
+                    <p class="innertext"></p>
+                </div>
+            </div>
+            <p id="noteTwo"></p>
+            <a href="" class="no">
+                <button class="btn flex btn_in_y" id="btn_in_m"><span>Continue the Story </span> <span class="rot">^</span></button>
+            </a>
+        </div>
 
     </section>
 
