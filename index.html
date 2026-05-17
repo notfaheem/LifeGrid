@@ -21,14 +21,14 @@
             <img class="logo" src="public/favicon.png">
             <div class="title">LifeGrid</div>
             <div class=""></div>
-            <div class="page active">Home</div>
-            <div class="page">About</div>
-            <div class="page">Contact</div>
+            <a class="no" href="index.html"><div class="page active">Home</div></a>
+            <a class="no" href="about.html"><div class="page ">About</div></a>
+            <a class="no" href="contact.html"><div class="page ">Contact</div></a>
         </div>
 
 
-        <video loop autoplay muted class="bg-video" poster="public/bg1.png">
-            <source src="public/cloud.mp4">
+        <video loop autoplay muted class="bg-video" poster="public/bg1.webp">
+            <source src="public/cloud.webm">
         </video>
         <div class="bg"></div>
 
@@ -38,9 +38,9 @@
 
             <p class="para1">Transform your age into an interactive grid of years, months, weeks, and days.</p>
 
-            <p class="para2">Enter your date of birth to see your life in weeks!</p>
+            <p class="para2">Enter your date of birth to watch your life unfolds!</p>
             <form>
-                <input value="2009-02-11" required type="date" id="dob" placeholder="Date of Birth">
+                <input  required type="date" id="dob" placeholder="Date of Birth">
                 <a href="#y-sec">
                     <button onclick="getdob()" type="button" id="btn" class="btn">Let's Go</button>
                 </a>
@@ -86,14 +86,94 @@
                 </div>
             </div>
             <p id="noteTwo"></p>
-            <a href="" class="no">
-                <button class="btn flex btn_in_y" id="btn_in_m"><span>Continue the Story </span> <span class="rot">^</span></button>
+            <a href="#d-sec" class="no">
+                <button onclick="days()" class="btn flex btn_in_y" id="btn_in_m"><span>Continue the Story </span> <span class="rot">^</span></button>
             </a>
         </div>
 
     </section>
 
+
+
+    <section class="y-sec m-sec" id="d-sec">
+
+        <div class="bg"></div>
+
+        <div class="y flex">
+            <p id="text-d" class="text text-m text-d">Hola</p>
+            <p id="noteThree"></p>
+            <p id="noteFour"></p>
+            <a href="about.html" class="no">
+                <button class="btn flex btn_in_y" id="btn_in_d"><span>Thanks for Visiting...  </span><span>Know more about me ? </span> </button>
+            </a>
+        </div>
+
+    </section>
+
+
+    <footer>
+        <div class="bg f-bg"></div>
+        <div class="f-pages flex">
+            <img class="logo" src="public/favicon.png">
+            <div class="title">LifeGrid</div>
+        </div>
+
+        <div class="f-pages">
+            <h3>Menu</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="f-pages">
+            <h3>Socials</h3>
+            <ul>
+                <li><a href="https://github.com/notfaheem">GitHub</a></li>
+                <li><a href="https://hackclub.enterprise.slack.com/team/U0B2VHPJC4C">Hack Club</a></li>
+                <li><a href="mailto:faheempfaisal@gmail.com">Email</a></li>
+            </ul>
+        </div>
+        <div class="f-pages">
+            <h3>More Projects</h3>
+            <ul>
+                <li><a href="https://notfaheem.github.io/LifeGrid/">Project 1</a></li>
+                <li><a href="https://notfaheem.github.io/my-demo-hackclub-website/">Project 2</a></li>
+                <li><a href="https://github.com/notfaheem">More in GitHub</a></li>
+            </ul>
+        </div>
+        <div></div>
+        <div class="copy">LifeGrid &copy; 2026</div>
+    </footer>
+
+
+
+    <div class="bg popup-bg" id="popup-bg"></div>
+    <div class="centerall popup" id="popup">
+        <h2 class="popup-head" id="popup-head">Title</h2>
+        <hr>
+        <p class="popup-para" id="popup-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque sapiente voluptas, inventore maxime sequi debitis reiciendis nulla, accusantium laborum quos cupiditate, quidem distinctio! Rerum quidem dolor, libero mollitia quasi a.</p>
+        <button onclick="unpopup()" class="btn popup-btn" id="popup-btn">Got it</button>
+    </div>
+
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 </body>
 
 </html>
+
+
+
+<!--
+
+
+TO DO 
+
+-Footer
+-Mobile/Tablet Compatability
+
+
+
+
+
+-->

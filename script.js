@@ -4,8 +4,14 @@ function getdob() {
     const dobValue = document.getElementById('dob').value;
     const dob = new Date(dobValue);
     const today = new Date();
-    let age = today.getFullYear() - dob.getFullYear();                      /* Make it const */
-    yearCircles(age);
+    const age = today.getFullYear() - dob.getFullYear();
+    const ySec = document.getElementById("y-sec");
+    if (dobValue === "") {
+        popup("Hold On 👀", "Every Story Starts With a Date ✨, right ? So please enter your Date of Birth...", "Got it")
+    } else {
+        ySec.style.display = "block";
+        yearCircles(age);
+    }
 }
 function delay(ms) {
     return new Promise(resolve => {
@@ -60,21 +66,18 @@ async function yearCircles(age) {
     }
     const btn_in_y = document.getElementById("btn_in_y");
     btn_in_y.style.opacity = 1;
-}
-yearCircles(1);                                                                /* Omit this line */
-
-
-
+};
 
 
 
 
 async function monthCircles() {
+    const mSec = document.getElementById("m-sec");
+    mSec.style.display = "block";
     const today = new Date();
     const dobValue = document.getElementById('dob').value;
     const dobNew = new Date(dobValue);
     let months = (today.getFullYear() - dobNew.getFullYear()) * 12 + (today.getMonth() - dobNew.getMonth());
-    console.log(months);
     const monthSec = document.getElementById("month-sec");
     const circle = document.getElementById("circle-m");
     circle.style.background = "green";
@@ -122,5 +125,128 @@ async function monthCircles() {
     }
     const btn_in_m = document.getElementById("btn_in_m");
     btn_in_m.style.opacity = 1;
+};
+
+
+
+
+async function days() {
+    const dSec = document.getElementById("d-sec");
+    dSec.style.display = "block";
+    const noteFour = document.getElementById("noteFour");
+    const noteOne = document.getElementById("noteThree");
+    noteOne.style.opacity = 0;
+    noteFour.style.opacity = 0;
+    const today = new Date();
+    const dobValue = document.getElementById('dob').value;
+    const dobNew = new Date(dobValue);
+    const difference = today.getTime() - dobNew.getTime();
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    console.log(days);
+    const textD = document.getElementById("text-d");
+    for (let i = 1; i <= days; i++) {
+        if (i < 2) {
+            textD.innerHTML = i + " Day";
+        } else {
+            textD.innerHTML = i + " Days";
+        }
+        let tempCounter = days - 300;
+        if (i < 100) {
+            i++;
+        }
+        else if (i < tempCounter) {
+            i += 100;
+        }
+        if (days < 10000) {
+            await delay(20);
+        } else {
+            await delay(10);
+        }
+    };
+
+
+    confetti({
+        particleCount: 100,
+        angle: 60,
+        spread: 70,
+        origin: { x: 0 }
+    });
+
+    confetti({
+        particleCount: 100,
+        angle: 120,
+        spread: 70,
+        origin: { x: 1 }
+    });
+
+
+
+
+    if (days <= 30) {
+        noteOne.innerText = `${days} days into this world… and already making an impact ✨`;
+    }
+    else if (days <= 365) {
+        noteOne.innerText = `${days} days of tiny moments, smiles, and memories 🌱`;
+    }
+    else if (days <= 5000) {
+        noteOne.innerText = `${days} days of adventures, learning, and growth 🚀`;
+    }
+    else if (days <= 10000) {
+        noteOne.innerText = `${days} days lived… that’s a lot of memories and late-night thoughts 🌌`;
+    }
+    else if (days <= 20000) {
+        noteOne.innerText = `${days} days on Earth — every single one adding to your story 📖`;
+    }
+    else {
+        noteOne.innerText = `${days} days lived… truly a legendary timeline 🕰️`;
+    }
+
+
+
+    const messages = [
+        "Which one from this was the happiest day of your life ?",
+
+        "You’ve already lived thousands of moments. Which one was the best ?",
+
+        "Time passes quietly. Until you finally see it.",
+
+        "One of these days made you who you are.",
+
+        "And maybe… your best days are still ahead."
+    ];
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    noteFour.innerText = messages[randomIndex];
+
+    setTimeout(() => {
+        noteOne.style.opacity = 1;
+    }, 1000);
+
+    setTimeout(() => {
+        noteFour.style.opacity = 1;
+    }, 2000)
+
+    setTimeout(() => {
+        const btn_in_d = document.getElementById("btn_in_d");
+        btn_in_d.style.opacity = 1;
+    }, 4000);
+};
+
+
+function popup(title, para, btn){
+    const popup = document.getElementById("popup");
+    const popupHead = document.getElementById("popup-head");
+    const popupPara = document.getElementById("popup-para");
+    const popupBtn = document.getElementById("popup-btn");
+    const popupBg = document.getElementById("popup-bg");
+    popup.style.transform = "translate(-50%, -50%) scale(1)";
+    popupBg.style.display = "block";
+    popupHead.innerText = title;
+    popupPara.innerText = para;
+    popupBtn.innerText = btn;
 }
-monthCircles();                                                                /* Omit this line */
+function unpopup(){
+    const popup = document.getElementById("popup");
+    const popupBg = document.getElementById("popup-bg");
+    popup.style.transform = "translate(-50%, -50%) scale(0)";
+    popupBg.style.display = "none";
+}
