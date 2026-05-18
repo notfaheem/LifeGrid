@@ -70,7 +70,6 @@ async function yearCircles(age) {
 
 
 
-
 async function monthCircles() {
     const mSec = document.getElementById("m-sec");
     mSec.style.display = "block";
@@ -129,7 +128,6 @@ async function monthCircles() {
 
 
 
-
 async function days() {
     const dSec = document.getElementById("d-sec");
     dSec.style.display = "block";
@@ -180,8 +178,6 @@ async function days() {
     });
 
 
-
-
     if (days <= 30) {
         noteOne.innerText = `${days} days into this world… and already making an impact ✨`;
     }
@@ -200,7 +196,6 @@ async function days() {
     else {
         noteOne.innerText = `${days} days lived… truly a legendary timeline 🕰️`;
     }
-
 
 
     const messages = [
@@ -250,3 +245,8 @@ function unpopup(){
     popup.style.transform = "translate(-50%, -50%) scale(0)";
     popupBg.style.display = "none";
 }
+
+window.addEventListener("load", () => {
+    const img = new Image();
+    img.src = "public/bg2.webp";
+})
