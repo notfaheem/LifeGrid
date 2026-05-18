@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Finger Paint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #000;
+}
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section{
+    width: 100%;
+    position: relative;
+    padding: 10% 10%;
+    overflow: hidden;
+}
+.center{
+    transform: translate(-50%);
+    left: 50%;
+}
+.centerall{
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top:50%;
+}
+.hero {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.nav {
+    width: 50%;
+    height: 10%;
+    background-color: hsla(0, 0%, 11%, 0.315);
+    backdrop-filter: blur(20px);
+    border: 1px solid #8f8f8f;
+    border-radius: 40px;
+    position: fixed;
+    top: 20px;
+    transform: translateX(-50%);
+    left: 50%;
+    box-shadow: black 0px 5px 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr 4fr 2fr 2fr 2fr;
+    place-items: center;
+    padding:10px 30px;
+    z-index: 10;
+}
+.logo {
+    width: 40px;
+}
+.title{
+    font-weight: 600;
+    font-size: 15px;
+}
+.page{
+    font-size: 13px;
+    padding:8px 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.active{
+    background-color: #fff;
+    color: #000;
+}
+.page:hover{
+    background-color: #fff;
+    color: #000;
+}
+.bg-video{
+    position: absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.bg{
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #00000088;
+}
+.head{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    width: 100%;
+    text-align: center;
+}
+.head1{
+    font-size: 60px;
+    margin:0;
+}
+.para1{
+    font-size: 13px;
+    margin: 0 0 40px 0;
+}
+.para2{
+    font-size: 18px;
+    margin:2px;
+    text-align: left;
+}
+
+footer{
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    padding:5% 5% ;
+    background: url(public/footer.webp);
+    background-position: center -300px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 2fr;
+    grid-template-rows: 5fr 1fr;
+    font-size: 15px;
+}
+footer > *:not(.f-bg){
+    z-index: 3;
+}
+footer ul{
+    margin-left: 20px;
+}
+div.copy{
+    grid-column: span 5 / span 5;
+    text-align: center;
+}
+.f-pages{
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.popup{
+    width: 20%;
+    position: fixed;
+    z-index: 100;
+    transition: 0.5s;
+    text-align: center;
+    background-color: #001931;
+    padding:20px 30px;
+    border-radius: 20px;
+    transform: translate(-50%,-50%) scale(0);
+}
+.popup-bg{
+    z-index: 99;
+    transition: 0.3s;
+    display: none;
+    position: fixed;
+}
+.popup-para{
+    margin: 10px 0;
+}
+.progress{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, auto);
+    row-gap: 5px;
+    margin:20px 0 0 0;
+    position: relative;
+}
+.dots{
+    position: relative;
+    width: 100%;
+    height: 30px;
+
+}
+.dot1{
+    width: 5px;
+    height:5px;
+    background-color: #178b00;
+    border-radius: 50%;
+    position: absolute;
+}
+.dot2{
+    width:20px;
+    height: 20px;
+    border-radius: 50%;
+    transform:translate(-50%,-50%) scale(0);
+    position: absolute;
+    background-color: #24d80088;
+    animation: dot 1s infinite forwards;
+}
+@keyframes dot {
+    0%{
+    transform:translate(-50%,-50%) scale(0);
+    }
+    50%{
+    transform:translate(-50%,-50%) scale(1);
+    }
+    100%{
+    transform:translate(-50%,-50%) scale(0);
+    }
+}
+.progress-text{
+    padding:0 10px;
+    font-size: 15px;
+}
+.y-dots .dot1{
+    background-color: #d3c501;
+}
+.y-dots .dot2{
+    background-color: #d3c5015d;
+}
+.progress-line{
+    position: absolute;
+    top:14px;
+    left:10%;
+    width: 80%;
+    height: 2px;
+    z-index: 2 ;   
+    background: linear-gradient(
+        to right,
+        #178b00 0%,
+        #178b00 75%,
+        #71d301 80%,
+        #d3c501 100%
+    );
+}
