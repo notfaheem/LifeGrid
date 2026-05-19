@@ -4,7 +4,13 @@ function getdob() {
     const dobValue = document.getElementById('dob').value;
     const dob = new Date(dobValue);
     const today = new Date();
-    const age = today.getFullYear() - dob.getFullYear();
+    let age = today.getFullYear() - dob.getFullYear();
+
+    const monthDifference = today.getMonth() - dob.getMonth();
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < dob.getDate())) {
+        age--;
+    }
+
     const ySec = document.getElementById("y-sec");
     if (dobValue === "") {
         popup("Hold On 👀", "Every Story Starts With a Date ✨, right ? So please enter your Date of Birth...", "Got it")
@@ -76,7 +82,12 @@ async function monthCircles() {
     const today = new Date();
     const dobValue = document.getElementById('dob').value;
     const dobNew = new Date(dobValue);
-    let months = (today.getFullYear() - dobNew.getFullYear()) * 12 + (today.getMonth() - dobNew.getMonth());
+    let months =
+        (today.getFullYear() - dobNew.getFullYear()) * 12 +
+        (today.getMonth() - dobNew.getMonth());
+    if (today.getDate() < dobNew.getDate()) {
+        months--;
+    }
     const monthSec = document.getElementById("month-sec");
     const circle = document.getElementById("circle-m");
     circle.style.background = "green";
@@ -227,7 +238,7 @@ async function days() {
 };
 
 
-function popup(title, para, btn){
+function popup(title, para, btn) {
     const popup = document.getElementById("popup");
     const popupHead = document.getElementById("popup-head");
     const popupPara = document.getElementById("popup-para");
@@ -239,7 +250,7 @@ function popup(title, para, btn){
     popupPara.innerText = para;
     popupBtn.innerText = btn;
 }
-function unpopup(){
+function unpopup() {
     const popup = document.getElementById("popup");
     const popupBg = document.getElementById("popup-bg");
     popup.style.transform = "translate(-50%, -50%) scale(0)";
